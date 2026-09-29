@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © - Liquidlab Agency - All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Liquidlab_MsiRemoval">
+        <!-- Load after Magento_ConfigurableProduct, so disabling its updateStockChangedAuto plugin sticks. -->
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_CatalogInventory"/>
+            <module name="Magento_ConfigurableProduct"/>
+            <module name="Magento_Bundle"/>
+            <module name="Magento_GroupedProduct"/>
+        </sequence>
+    </module>
+</config>

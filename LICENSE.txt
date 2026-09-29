@@ -1,0 +1,13 @@
+PROPRIETARY LICENSE AGREEMENT
+
+Copyright (c) LIQUIDLAB. All rights reserved.
+
+This software and associated documentation (the "Software") are the exclusive property of 
+LIQUIDLAB and protected under copyright laws.
+
+**You are NOT permitted to:**
+- Use, copy, modify, or distribute the Software without a written license agreement.
+- Reverse-engineer, decompile, or disassemble the Software.
+- Sub-license, sell, rent, or lease the Software to third parties.
+
+Violations will result in legal action and liabilityve  for damages under applicable laws.

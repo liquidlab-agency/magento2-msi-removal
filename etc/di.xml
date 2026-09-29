@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © - Liquidlab Agency - All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\CatalogInventory\Model\ResourceModel\Stock\Item">
+        <!-- MSI re-checked composite parents on every stock item save; without MSI only a product save does. -->
+        <plugin name="liquidlab_msi_removal_sync_parent_stock"
+                type="Liquidlab\MsiRemoval\Plugin\CatalogInventory\SyncParentStockOnStockItemSave"/>
+        <!-- Core's plugin marks every out-of-stock save of a configurable as set by hand, so a sold-out
+             configurable re-saved in the admin never comes back in stock. Ours only does on a real switch. -->
+        <plugin name="updateStockChangedAuto" disabled="true"/>
+        <plugin name="liquidlab_msi_removal_update_stock_changed_auto"
+                type="Liquidlab\MsiRemoval\Plugin\CatalogInventory\UpdateStockChangedAuto"/>
+    </type>
+    <type name="Liquidlab\MsiRemoval\Model\ParentStockSynchronizer">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="configurable" xsi:type="object">Liquidlab\MsiRemoval\Model\ParentStock\Configurable</item>
+                <item name="bundle" xsi:type="object">Liquidlab\MsiRemoval\Model\ParentStock\Bundle</item>
+                <item name="grouped" xsi:type="object">Liquidlab\MsiRemoval\Model\ParentStock\Grouped</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
