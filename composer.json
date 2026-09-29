@@ -2,7 +2,21 @@
     "name": "liquidlab-agency/magento2-msi-removal",
     "description": "Removes Magento Multi-Source Inventory (MSI) and keeps configurable, bundle and grouped products in stock while their children are",
     "type": "magento2-module",
-    "license": "proprietary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Liquidlab",
+            "email": "support@liquidlab.ro"
+        }
+    ],
+    "keywords": [
+        "magento2",
+        "msi",
+        "inventory",
+        "stock",
+        "configurable",
+        "fix"
+    ],
     "require": {
         "php": "~8.1.0||~8.2.0||~8.3.0||~8.4.0",
         "magento/framework": "^103.0.5",

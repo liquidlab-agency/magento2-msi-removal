@@ -37,3 +37,6 @@ Requires Magento Open Source 2.4.5 or later.
 - Parents already stuck before installing (out of stock while a child is in stock) are fixed by the next stock
   update of one of their children if Magento had switched them off. Parents switched off by hand, including the
   ones re-saved in the admin before installing, need setting to *In Stock* once.
+
+## License
+MIT, see [LICENSE.txt](LICENSE.txt).
