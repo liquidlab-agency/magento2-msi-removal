@@ -16,6 +16,10 @@
         <plugin name="updateStockChangedAuto" disabled="true"/>
         <plugin name="liquidlab_msi_removal_update_stock_changed_auto"
                 type="Liquidlab\MsiRemoval\Plugin\CatalogInventory\UpdateStockChangedAuto"/>
+        <!-- Core reindexes the price after a stock status change without force, which does nothing while the
+             price indexer runs on schedule; MSI forced it. Restocked products otherwise stay without a price. -->
+        <plugin name="liquidlab_msi_removal_reindex_price"
+                type="Liquidlab\MsiRemoval\Plugin\CatalogInventory\ReindexPriceOnStockStatusChange"/>
     </type>
     <type name="Liquidlab\MsiRemoval\Model\ParentStockSynchronizer">
         <arguments>
